@@ -1,0 +1,73 @@
+.botonsidenav {
+  padding: 16px 0 0 10px;
+  width:100%;
+  text-align:left !important;
+  height:70px;
+}
+section.main{
+  padding: 15px;
+}
+md-whiteframe {
+  padding: 10px 15px;
+  margin: 0 0 15px 0;
+}
+md-whiteframe h2{
+  margin-top: 5px;
+  font-size: 1.3em;
+}
+md-input-container{
+  margin-bottom: 0;
+  width: 65%;
+}
+p.botonform{
+  margin: 0 0 20px 0;
+}
+
+h1{
+  background: #adf;
+  font-size: 1.6em;
+  padding: 10px;
+  border-radius: 4px;
+}
+input, button{
+  font-size: 120%;
+  border-radius: 5px;
+}
+label {
+  display: inline-block;
+  margin-bottom: 10px;
+  width: 110px;
+}
+
+
+.liuser{
+  padding: 5px;
+  background-color: #87edbf;
+  font-size: .8em;
+  display: inline-block;
+  margin: 0 5px 5px 0;
+  border-radius: 4px;
+}
+.liuser button{
+  font-size: .8em;
+  border-radius: 4px;
+}
+.mensaje {
+  padding: 5px 10px;
+  background-color: #deed97;
+  margin-bottom: 10px;
+}
+.msgerror{
+  color: red;
+}
+.msgcorrecto{
+  color: black;
+}
+.redes{
+  margin: 10px 0;
+}
+.redes img{
+  width: 120px;
+  margin-right: 10px;
+  cursor: pointer;
+}

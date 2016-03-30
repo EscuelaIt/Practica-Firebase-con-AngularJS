@@ -1,0 +1,22 @@
+<h2>Todolist</h2>
+<div>
+  <md-input-container>
+       <label>Nueva TodoList</label>
+       <input ng-model="vmPortada.nameTodoList">
+  </md-input-container>
+  <md-button class="md-icon-button" aria-label="Nueva" ng-click="vmPortada.nuevaTodolist()">
+    <md-icon>add</md-icon>
+  </md-button>
+</div>
+
+
+
+    <P idtodolist="item.$id" ng-repeat="item in vmPortada.todoLists">
+      {{item.$id}}
+    </P>
+
+<!--
+<md-list>
+    <todo-list-elemento idtodolist="item.$id" ng-repeat="item in vmPortada.todoLists">{{item.$id}}</todo-list-elemento>
+</md-list>
+-->

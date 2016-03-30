@@ -1,0 +1,25 @@
+{
+  "name": "practica-firebase-angular",
+  "authors": [
+    "Miguel Angel Alvarez <malvarez@desarrolloweb.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "^1.0.6",
+    "angular-ui-router": "^0.2.18",
+    "angular": "^1.5.3",
+    "angularfire": "^1.2.0",
+    "firebase": "^2.4.2"
+  }
+}

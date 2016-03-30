@@ -1,0 +1,24 @@
+<md-whiteframe class="md-whiteframe-3dp" ng-show="!vm.autenticado">
+  <h2>Login de usuarios</h2>
+  <md-input-container>
+    <label>Email</label>
+    <input type="text" ng-model="loginvm.loginusuario.email" required>
+  </md-input-container>
+  <br>
+  <md-input-container>
+    <label>Clave</label>
+    <input type="password" ng-model="loginvm.loginusuario.password" required>
+  </md-input-container>
+  <p class="botonform">
+    <md-button class="md-raised" ng-click="loginvm.loguearUsuario()"> Login </md-button>
+  </p>
+  <div class="redes">
+    <img src="log-twitter.png" alt="Login con Twitter" ng-click="loginvm.logtwitter()">
+    <img src="log-facebook.png" alt="Login con Facebook" ng-click="loginvm.logfacebook()">
+    <img src="log-github.png" alt="Login con Github" ng-click="loginvm.loggithub()">
+    <img src="log-google.png" alt="Login con Google" ng-click="loginvm.loggoogle()">
+  </div>
+</md-whiteframe>
+<p ng-show="vm.autenticado">
+  No necesitas hacer login, pues estás ya autenticado.
+</p>

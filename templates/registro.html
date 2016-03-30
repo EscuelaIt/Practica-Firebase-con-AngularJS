@@ -1,0 +1,24 @@
+<md-whiteframe class="md-whiteframe-3dp" ng-show="!vm.autenticado">
+  <h2>Registro de usuarios</h2>
+  <md-input-container>
+    <label>Nombre</label>
+    <input type="text" ng-model="registrovm.registrousuario.nombre" required>
+  </md-input-container>
+  <md-input-container>
+    <label>Apellidos</label>
+    <input type="text" ng-model="registrovm.registrousuario.apellidos" required>
+  </md-input-container>
+  <md-input-container>
+    <label>Email</label>
+    <input type="text" ng-model="registrovm.registrousuario.email" required>
+  </md-input-container>
+  <md-input-container>
+    <label>Clave</label>
+    <input type="password" ng-model="registrovm.registrousuario.clave" required>
+  </md-input-container>
+  <br>
+  <md-button class="md-raised" ng-click="registrovm.registrarUsuario()"> Registrar usuario </md-button>
+</md-whiteframe>
+<p ng-show="vm.autenticado">
+  No necesitas registrarte, pues estás ya autenticado.
+</p>
