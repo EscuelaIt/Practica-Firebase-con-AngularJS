@@ -47,10 +47,19 @@ angular.module("angularFireApp")
       .catch(function(error) {
         $mdToast.show($mdToast.simple().textContent('Error al loguear al usuario' + error));
       });
+      $rootScope.$broadcast('login');
   }
 
   serv.usuarioAutenticado = function() {
     return serv.firebaseAuth.$getAuth();
   }
 
+  serv.dameUid = function() {
+    var auth = serv.usuarioAutenticado();
+    if(auth){
+      return auth.uid;
+    }else{
+      return false;
+    }
+  }
 });

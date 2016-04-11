@@ -24,6 +24,10 @@ angular.module("angularFireApp")
     templateUrl: 'templates/registro.html',
     controller: 'RegistroController as registrovm'
   });
+  $stateProvider.state('todolistDetalle', {
+    url: '/todolist/:todolistId',
+    template: '<todolist-detalle></todolist-detalle>'
+  })
 })
 .config(function($urlRouterProvider) {
   $urlRouterProvider.otherwise('/');

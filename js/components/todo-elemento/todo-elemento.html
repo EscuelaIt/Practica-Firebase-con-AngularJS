@@ -1,0 +1,4 @@
+<md-list-item class="elementotodo" flex layout="row">
+  <md-checkbox ng-model="$ctrl.todoData.completed" ng-change="$ctrl.salvar()"></md-checkbox>
+  <p ng-class="{completed: $ctrl.todoData.completed}">{{$ctrl.todoData.name}}</p>
+</md-list-item>

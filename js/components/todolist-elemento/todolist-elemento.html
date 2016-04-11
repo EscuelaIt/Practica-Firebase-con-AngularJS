@@ -1,0 +1,15 @@
+<md-list-item class="elementotodolists" flex layout="row">
+  <md-icon>assignment</md-icon>
+  <span flex="60"><a ui-sref="todolistDetalle({todolistId:$ctrl.todolistData.$id})">{{$ctrl.todolistData.name}}</a></span>
+  <div flex="35">
+    <md-button class="md-icon-button">
+      <md-icon>create</md-icon>
+    </md-button>
+    <md-button class="md-icon-button">
+      <md-icon>delete</md-icon>
+    </md-button>
+    <md-button class="md-icon-button" ng-show="$ctrl.todolistData.userCreator == $ctrl.userId">
+      <md-icon>share</md-icon>
+    </md-button>
+  </div>
+</md-list-item>

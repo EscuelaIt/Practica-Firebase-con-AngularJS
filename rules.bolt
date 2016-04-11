@@ -1,0 +1,91 @@
+// ***************
+// TYPES
+// ***************
+
+type NameString extends String {
+  validate() {this.length > 0 && this.length <= 50}
+}
+
+type Todo{
+  completed: Boolean,
+  name: NameString
+}
+type User {
+  apellidos: String,
+  email: String,
+  nombre: String,
+  provider: String
+}
+type TodoList {
+  deleted: Boolean,
+  name: NameString,
+  userCreator: NameString,
+  usersShared: Object | Null
+}
+
+// ***************
+// FUNCTIONS
+// ***************
+
+isCreator(idtl, uid) {
+  root.todolist[idtl].userCreator === uid
+}
+isShared(idtl, uid) {
+  root.todolist[idtl].usersShared[uid] != null
+}
+
+isCreatorOrShared(idtl, uid){
+  isCreator(idtl, uid) || isShared(idtl, uid)
+}
+
+// ***************
+// PATHS
+// ***************
+
+// USER
+
+path /users {
+  read() {auth.uid !== null}
+}
+path /users/{$id} is User {
+  write() {$id === auth.uid}
+}
+
+// USERTODOLIST
+
+path /userTodolist/{$id_user} {
+  read() {$id_user == auth.uid}
+  write() {$id_user == auth.uid}
+}
+
+// TODOS
+
+path /todos/{$idtodolist} {
+  read() {isCreatorOrShared($idtodolist, auth.uid)}
+  write() {isCreatorOrShared($idtodolist, auth.uid)}
+}
+
+path /todos/{$idtodolist}/{$idtodo} is Todo {
+}
+
+// TODOLIST
+
+path /todolist/{$idtodolist} is TodoList{
+  read() {isCreatorOrShared($idtodolist, auth.uid)}
+  write() {isCreator($idtodolist, auth.uid)}
+}
+
+path /todolist/{$idtodolist}/name {
+  write() {isShared($idtodolist, auth.uid)}
+}
+
+path /todolist/{$idtodolist}/deleted {
+  write() {isShared($idtodolist, auth.uid)}
+}
+
+// NOTIFICATIONS
+
+path /notifications {
+  read() {true}
+  write() {true}
+}

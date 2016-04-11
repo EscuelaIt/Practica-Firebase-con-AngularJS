@@ -1,0 +1,29 @@
+<header>
+  <h2>{{$ctrl.todolistData.name}}</h2>
+</header>
+<todo-insertar idtodolist="{{$ctrl.todolistData.$id}}"></todo-insertar>
+<section id="todosection" layout="row" layout-fill>
+  <div flex="50">
+    <h3>Tareas</h3>
+
+    <md-list>
+        <todo-elemento idtodolist="$ctrl.todolistData.$id" idtodo="item.$id" ng-repeat="item in $ctrl.todos">hollll</todo-elemento>
+    </md-list>
+  </div>
+  <div flex="50">
+    <h3>Compartida con usuarios</h3>
+    <md-button ng-show="$ctrl.esPropietario" class="md-raised" ng-click="$ctrl.dialogoCompartir($event)">Compartir</md-button>
+  </div>
+</section>
+
+<!--
+
+<section id="todosection" layout="row" layout-fill>
+  <div flex="50">
+    <h3>Tareas</h3>
+    <md-list>
+        <todo-elemento idtodolist="$ctrl.todolistData.$id" idtodo="item.$id" ng-repeat="item in $ctrl.todos"></todo-elemento>
+    </md-list>
+  </div>
+
+</section> -->

@@ -17,4 +17,8 @@ angular.module("angularFireApp")
         vm.todoLists.$destroy();
       }
     });
+
+    $rootScope.$on('login',function(){
+			vm.todoLists = todosService.dameTodoListsUsuario();
+		});
   });
